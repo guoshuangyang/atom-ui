@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/base",
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:vue/vue3-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": {
+      // Script parser for `<script>`
+      "js": "espree",
+      // Script parser for `<script lang="ts">`
+      "ts": "@typescript-eslint/parser",
+      // If not specified, the parser determined by `<script lang ="...">` is used.
+      "<template>": "espree"
+    },
+    "vueFeatures": {
+      "filter": false,
+      "interpolationAsNonHTML": true,
+      "styleCSSVariableInjection": true
+    }
+  },
+  "plugins": ["vue", "prettier", "@typescript-eslint"],
+  "rules": {
+    "generator-star-spacing": 0,
+    "semi": ["error", "always"],
+    "indent": ["error", 2],
+    "space-before-function-paren": 0,
+    "eol-last": 0,
+    "no-useless-escape": "off",
+    "max-len": [
+      2,
+      200,
+      4,
+      {
+        "ignoreUrls": true
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "guard-for-in": "error",
+    // prettier
+    "prettier/prettier": "error",
+    // import
+    "import/no-unresolved": "off",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/named": "off"
+  }
+}
