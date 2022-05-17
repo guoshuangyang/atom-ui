@@ -1,7 +1,16 @@
 {
-  "name": "atom-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "atom-vue-component",
+  "version": "0.0.1-beta.0",
+  "license": "MIT",
+  "keywords": [
+    "atom",
+    "vue",
+    "component",
+    "vue-component",
+    "vue-component-atom",
+    "ui",
+    "ui-component"
+  ],
   "scripts": {
     "cz": "git-cz",
     "dev": "vite --host",
@@ -10,15 +19,23 @@
     "preview": "vite preview",
     "release": "standard-version"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guoshuangyang/atom-ui.git"
+  },
   "files": [
-    "dist"
+    "dist",
+    "package",
+    "tsconfig.json",
+    "src",
+    "README.md"
   ],
-  "main": "./dist/atom-ui.umd.js",
-  "module": "./dist/atom-ui.es.js",
+  "main": "./dist/atom.umd.js",
+  "module": "./dist/atom.es.js",
   "exports": {
     ".": {
-      "import": "./dist/atom-ui.es.js",
-      "require": "./dist/atom-ui.umd.js"
+      "import": "./dist/atom.es.js",
+      "require": "./dist/atom.umd.js"
     }
   },
   "packageManager": "pnpm@7.0.0",

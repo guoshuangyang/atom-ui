@@ -4,29 +4,12 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, PropType } from "vue";
 
 const _ref = ref<HTMLButtonElement>();
-
-// const slots = useSlots();
 const emit = defineEmits({
   click: (evt: MouseEvent) => evt instanceof MouseEvent,
 });
-const props = defineProps({
-  text: { type: String, default: "button" },
-  type: { type: String, default: "default" },
-  size: { type: String, default: "default" },
-  disabled: { type: Boolean, default: false },
-  nativeType: {
-    type: String,
-    default: "button",
-    validator: (v: string) => ["button", "submit", "reset"].includes(v),
-  },
-  loading: { type: Boolean, default: false },
-  plain: { type: Boolean, default: false },
-  round: { type: Boolean, default: false },
-});
-
 const handleClick = (evt: MouseEvent) => {
   if (props.disabled) {
     evt.preventDefault();
@@ -34,11 +17,24 @@ const handleClick = (evt: MouseEvent) => {
     return;
   }
   if (props.nativeType === "reset") {
-    console.log("object-nativeType-reset");
+    // TODO reset form
   }
   emit("click", evt);
 };
-
+const props = defineProps({
+  text: { type: String, default: "button" },
+  type: { type: String, default: "default" },
+  size: { type: String, default: "default" },
+  disabled: { type: Boolean, default: false },
+  loading: { type: Boolean, default: false },
+  plain: { type: Boolean, default: false },
+  round: { type: Boolean, default: false },
+  nativeType: {
+    type: String as PropType<"button" | "submit" | "reset">,
+    default: "button",
+    validator: (v: string) => ["button", "submit", "reset"].includes(v),
+  },
+});
 defineExpose({
   /** @description button html element */
   ref: _ref,

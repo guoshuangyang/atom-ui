@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "./packages/main.ts"),
-      name: "atom-ui",
-      fileName: (format) => `atom-ui.${format}.js`,
+      name: "Atom",
+      fileName: (format) => `atom.${format}.js`,
     },
     rollupOptions: {
       external: ["vue"],
