@@ -12,7 +12,7 @@ export default defineConfig({
     // accepts globs and file paths relative to project root
     include: [
       "index.html",
-      "src/**/*.{vue,html,jsx,tsx}",
+      "src/**/*.{vue,html,jsx,tsx,ts,js}",
       "packages/**/*.{vue,html,jsx,tsx,ts,js}",
     ],
     exclude: ["node_modules/**/*", ".git/**/*"],

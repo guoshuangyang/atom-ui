@@ -4,8 +4,8 @@
  */
 
 // 颜色类
-const types = ["bg", "text"];
-const colors = ["primary", "success", "warning", "info", "danger"];
+const types = ["bg", "text", "border"];
+const colors = ["primary", "success", "warning", "info", "danger", "default"];
 function range(types, colors) {
   const result = [];
   types.forEach((type) => {

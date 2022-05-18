@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>Hello World</h1>
-    <p>This is my first Vue app.</p>
-    <AtomButton>567890</AtomButton>
+    <AtomButton size="default" type="primary" disabled>567890</AtomButton>
   </div>
 </template>
 

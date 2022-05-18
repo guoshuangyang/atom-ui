@@ -5,13 +5,13 @@ import WindiCSS from "vite-plugin-windicss";
 export default defineConfig({
   plugins: [vue(), WindiCSS()], // vite-plugin-vue
   resolve: {
-    alias: { find: "packages", replacement: resolve(__dirname, "./packages") },
+    // alias: { find: "packages", replacement: resolve(__dirname, "./packages") },
   },
   build: {
     lib: {
       entry: resolve(__dirname, "./packages/main.ts"),
       name: "Atom",
-      fileName: (format) => `atom.${format}.js`,
+      fileName: (format) => `atom-ui.${format}.js`,
     },
     rollupOptions: {
       external: ["vue"],
